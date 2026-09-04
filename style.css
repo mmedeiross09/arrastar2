@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.frases-section, .palavras-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.frases-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.frase-item {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.frase-item p {
+    color: #333;
+}
+
+.drop-zone {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background-size: 200% 200%;
+    min-width: 120px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    border: 2px dashed #667eea;
+    min-height: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: grab;
+}
+
+.drop-zone:hover {
+    background: #fff3cd;
+    transform: scale(1.05);
+}
+
+.drop-zone.filled {
+    border-style: solid;
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: white;
+    font-weight: bold;
+}
+
+.drop-zone.filled:hover {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    transform: none;
+}
+
+.palavras-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.palavra {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: grab;
+    user-select: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    border: 2px solid transparent;
+}
+
+.palavra:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.palavra:active {
+    cursor: grabbing;
+}
+
+.palavra.dragging {
+    opacity: 0.6;
+}
+
+.palavra.usado {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.resultado {
+    padding: 30px 40px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado.sucesso {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    animation: slideIn 0.5s ease;
+}
+
+.resultado.erro {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reset-btn {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .frase-item {
+        font-size: 1em;
+    }
+
+    .drop-zone {
+        min-width: 100px;
+    }
+}

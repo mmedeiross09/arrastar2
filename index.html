@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases sobre IA - Arrastar para Completar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Frases sobre IA</h1>
+            <p>Arraste as palavras para completar as frases!</p>
+        </header>
+
+        <div class="content">
+            <div class="frases-section">
+                <h2>Frases para Completar:</h2>
+                <div class="frases-container">
+                    <div class="frase-item">
+                        <p>A inteligência artificial é capaz de <span class="drop-zone" data-id="1"></span> padrões nos dados.</p>
+                    </div>
+                    <div class="frase-item">
+                        <p>Os algoritmos de machine learning precisam de <span class="drop-zone" data-id="2"></span> para funcionar bem.</p>
+                    </div>
+                    <div class="frase-item">
+                        <p>A IA pode <span class="drop-zone" data-id="3"></span> decisões importantes em segundos.</p>
+                    </div>
+                    <div class="frase-item">
+                        <p>As redes neurais <span class="drop-zone" data-id="4"></span> o funcionamento do cérebro humano.</p>
+                    </div>
+                    <div class="frase-item">
+                        <p>O deep learning é uma <span class="drop-zone" data-id="5"></span> da inteligência artificial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palavras-section">
+                <h2>Palavras para Arrastar:</h2>
+                <div class="palavras-container" id="palavras-container">
+                    <div class="palavra" draggable="true" data-palavra="identificar">identificar</div>
+                    <div class="palavra" draggable="true" data-palavra="dados">dados</div>
+                    <div class="palavra" draggable="true" data-palavra="tomar">tomar</div>
+                    <div class="palavra" draggable="true" data-palavra="imitam">imitam</div>
+                    <div class="palavra" draggable="true" data-palavra="ramificação">ramificação</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resultado" id="resultado"></div>
+        <button class="reset-btn" onclick="resetarJogo()">Reiniciar Jogo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
